@@ -3,20 +3,8 @@ import { connect } from 'react-redux'
 import CalculatorKey from './CalculatorKey';
 import './Calculator.css';
 import * as actions from './actions';
+import CalculatorDisplay from './CalculatorDisplay';
 
-
-
-// container
-class CalculatorDisplay extends React.Component {
-  render() {
-    const { value, ...props } = this.props;
-    return (
-      <div {...props} className="calculator-display">
-        {this.props.children}
-      </div>
-    );
-  }
-}
 
 class Calculator extends Component {
   onClearAll() {
@@ -24,7 +12,7 @@ class Calculator extends Component {
     this.props.clearKeyPressed();
   }
 
-  onIputDigit(digit) {
+  onInputDigit(digit) {
     this.props.inputDigit(digit);
   }
 
@@ -41,9 +29,7 @@ class Calculator extends Component {
   render() {
     return (
       <div className="calculator">
-        <CalculatorDisplay >
-          {this.props.calculator.SCREEN}
-        </CalculatorDisplay>
+        <CalculatorDisplay >  </CalculatorDisplay>
         <div className="calculator-keypad">
           <div className="input-keys">
             <div className="function-keys">
@@ -52,17 +38,17 @@ class Calculator extends Component {
               <CalculatorKey className="key-percent" onPress={() => { this.onInputPercentage(); }}>%</CalculatorKey>
             </div>
             <div className="digit-keys">
-              <CalculatorKey className="key-0" onPress={() => { this.onIputDigit(0); }}>0</CalculatorKey>
+              <CalculatorKey className="key-0" onPress={() => { this.onInputDigit(0); }}>0</CalculatorKey>
               <CalculatorKey className="key-dot" onPress={() => { this.onInputDot(); }}>●</CalculatorKey>
-              <CalculatorKey className="key-1" onPress={() => { this.onIputDigit(1); }}>1</CalculatorKey>
-              <CalculatorKey className="key-2" onPress={() => { this.onIputDigit(2); }}>2</CalculatorKey>
-              <CalculatorKey className="key-3" onPress={() => { this.onIputDigit(3); }}>3</CalculatorKey>
-              <CalculatorKey className="key-4" onPress={() => { this.onIputDigit(4); }}>4</CalculatorKey>
-              <CalculatorKey className="key-5" onPress={() => { this.onIputDigit(5); }}>5</CalculatorKey>
-              <CalculatorKey className="key-6" onPress={() => { this.onIputDigit(6); }}>6</CalculatorKey>
-              <CalculatorKey className="key-7" onPress={() => { this.onIputDigit(7); }}>7</CalculatorKey>
-              <CalculatorKey className="key-8" onPress={() => { this.onIputDigit(8); }}>8</CalculatorKey>
-              <CalculatorKey className="key-9" onPress={() => { this.onIputDigit(9); }}>9</CalculatorKey>
+              <CalculatorKey className="key-1" onPress={() => { this.onInputDigit(1); }}>1</CalculatorKey>
+              <CalculatorKey className="key-2" onPress={() => { this.onInputDigit(2); }}>2</CalculatorKey>
+              <CalculatorKey className="key-3" onPress={() => { this.onInputDigit(3); }}>3</CalculatorKey>
+              <CalculatorKey className="key-4" onPress={() => { this.onInputDigit(4); }}>4</CalculatorKey>
+              <CalculatorKey className="key-5" onPress={() => { this.onInputDigit(5); }}>5</CalculatorKey>
+              <CalculatorKey className="key-6" onPress={() => { this.onInputDigit(6); }}>6</CalculatorKey>
+              <CalculatorKey className="key-7" onPress={() => { this.onInputDigit(7); }}>7</CalculatorKey>
+              <CalculatorKey className="key-8" onPress={() => { this.onInputDigit(8); }}>8</CalculatorKey>
+              <CalculatorKey className="key-9" onPress={() => { this.onInputDigit(9); }}>9</CalculatorKey>
             </div>
 
           </div>

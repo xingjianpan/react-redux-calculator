@@ -32,3 +32,9 @@ export const inputPercentage = () => {
   };
 };
 
+export const changeScreenScale = (scale) => {
+  return {
+    type: 'CHANGE_SCALE',
+    payload: scale,
+  };
+};
